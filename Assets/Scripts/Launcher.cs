@@ -19,7 +19,6 @@ namespace Net.DaimnonGames.PhotonMultiplayer
         private byte maxPlayersPerRoom = 4;
         #endregion
 
-
         #region Private Fields
 
 
@@ -30,7 +29,6 @@ namespace Net.DaimnonGames.PhotonMultiplayer
 
 
         #endregion
-
 
         #region MonoBehaviour CallBacks
 
@@ -51,7 +49,6 @@ namespace Net.DaimnonGames.PhotonMultiplayer
         /// </summary>
         void Start()
         {
-            Connect();
         }
         #endregion
 
