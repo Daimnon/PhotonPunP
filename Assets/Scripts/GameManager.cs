@@ -1,18 +1,41 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class GameManager : MonoBehaviour
+
+namespace Net.DaimnonGames.PhotonMultiplayer
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager : MonoBehaviourPunCallbacks
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        #region Photon Callbacks
+
+
+        /// <summary>
+        /// Called when the local player left the room. We need to load the launcher scene.
+        /// </summary>
+        public override void OnLeftRoom()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+
+        #endregion
+
+
+        #region Public Methods
+
+
+        public void LeaveRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+
+        #endregion
     }
 }
