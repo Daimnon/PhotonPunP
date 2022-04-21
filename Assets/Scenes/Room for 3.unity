@@ -1070,7 +1070,11 @@ PrefabInstance:
     - target: {fileID: 4778852527918638147, guid: d8fa6c2b1820e0a44bb47bfd615692fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7682793285536570018}
+      objectReference: {fileID: 4464400942893536792, guid: 2256c8dfadc910343a5c01657d0f4758, type: 3}
+    - target: {fileID: 4778852527918638147, guid: d8fa6c2b1820e0a44bb47bfd615692fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeaveRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 5845467676978700783, guid: d8fa6c2b1820e0a44bb47bfd615692fe, type: 3}
       propertyPath: m_Name
       value: Leave Button
@@ -1139,14 +1143,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2256c8dfadc910343a5c01657d0f4758, type: 3}
---- !u!114 &7682793285536570018 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4464400942893536792, guid: 2256c8dfadc910343a5c01657d0f4758, type: 3}
-  m_PrefabInstance: {fileID: 7682793285536570017}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94cd9202bc78c644382c0ed841cc08f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
