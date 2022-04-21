@@ -80,7 +80,7 @@ namespace Net.DaimnonGames.PhotonMultiplayer
             if (isConnecting)
             {
                 // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-                PhotonNetwork.JoinRandomRoom();
+                //PhotonNetwork.JoinRandomRoom();
                 isConnecting = false;
             }
         }
