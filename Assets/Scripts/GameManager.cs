@@ -10,6 +10,9 @@ namespace Net.DaimnonGames.PhotonMultiplayer
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        #region Public Fields
+        public static GameManager Instance;
+        #endregion
 
 
         #region Photon Callbacks
@@ -22,40 +25,6 @@ namespace Net.DaimnonGames.PhotonMultiplayer
         {
             SceneManager.LoadScene(0);
         }
-
-
-        #endregion
-
-
-        #region Public Methods
-
-
-        public void LeaveRoom()
-        {
-            PhotonNetwork.LeaveRoom();
-        }
-
-
-        #endregion
-
-        #region Private Methods
-
-
-        void LoadArena()
-        {
-            if (!PhotonNetwork.IsMasterClient)
-            {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
-            }
-            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-            PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
-        }
-
-
-        #endregion
-
-        #region Photon Callbacks
-
 
         public override void OnPlayerEnteredRoom(Player other)
         {
@@ -87,6 +56,40 @@ namespace Net.DaimnonGames.PhotonMultiplayer
         }
 
 
+        #endregion
+
+        #region Public Methods
+
+
+        public void LeaveRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+
+        #endregion
+
+        #region Private Methods
+
+
+        void LoadArena()
+        {
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+            }
+            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
+        }
+
+
+        #endregion
+
+        #region MonoBehaviour Callbacks
+        private void Start()
+        {
+            Instance = this;
+        }
         #endregion
     }
 }
